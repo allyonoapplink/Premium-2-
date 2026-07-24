@@ -60,8 +60,8 @@
     body.dark-theme .app-card .card-stat-value.bonus-green { color: #dc2626; text-shadow: 0 0 12px #dc2626; }
     body.dark-theme .app-card .card-stat-value.bonus-red { color: #dc2626; text-shadow: 0 0 12px #dc2626; }
     body.dark-theme .app-card .card-stat-value.votes-black { color: #06b6d4; text-shadow: 0 0 12px #06b6d4; }
-    body.dark-theme .final-download-btn { background: linear-gradient(135deg, #22c55e, #eab308, #06b6d4); color: #fff; box-shadow: 0 0 20px rgba(34,197,94,0.3); }
-    body.dark-theme .final-download-btn:hover { background: linear-gradient(135deg, #06b6d4, #eab308, #22c55e); box-shadow: 0 0 30px rgba(6,182,212,0.4); }
+    body.dark-theme .final-download-btn { background: linear-gradient(135deg, #22c55e, #06b6d4); color: #fff; box-shadow: 0 0 20px rgba(34,197,94,0.3); }
+    body.dark-theme .final-download-btn:hover { background: linear-gradient(135deg, #06b6d4, #22c55e); box-shadow: 0 0 30px rgba(6,182,212,0.4); }
     body.dark-theme .small-download { background: linear-gradient(135deg, #22c55e, #06b6d4); color: #fff; box-shadow: 0 0 15px rgba(34,197,94,0.2); }
     body.dark-theme .small-download:hover { background: linear-gradient(135deg, #06b6d4, #22c55e); }
     
@@ -360,7 +360,6 @@
     .app-card .download-btn:hover { background: #1a1a1a; transform: scale(0.97); }
     
     .app-card .card-spin-desc { font-size: 0.7rem; color: #2d3e2b; line-height: 1.5; margin: 6px 0 4px; text-align: left; padding: 0 2px; }
-    .app-card .card-spin-desc strong { color: #1e562a; }
     .app-card .card-benefits { font-size: 0.65rem; color: #1e562a; line-height: 1.5; margin: 4px 0 6px; text-align: left; padding: 6px 10px; background: #f0f9f0; border-radius: 12px; border-left: 3px solid #22c55e; }
     .app-card .card-benefits strong { color: #0a2e1d; }
     
@@ -461,33 +460,8 @@
     .stat-item { text-align: center; min-width: 54px; }
     .stat-value { font-size: 1rem; font-weight: 800; color: #1e562a; }
     .stat-label { font-size: 0.55rem; font-weight: 600; color: #6c7a5a; letter-spacing: 0.3px; }
-    
-    /* Premium LED 3-color gradient for download buttons */
-    .final-download-btn {
-      background: linear-gradient(135deg, #22c55e, #eab308, #06b6d4);
-      padding: 12px 16px;
-      font-size: 0.85rem;
-      font-weight: 800;
-      border-radius: 60px;
-      display: block;
-      width: 100%;
-      margin: 14px 0 12px 0;
-      box-shadow: 0 0 20px rgba(34,197,94,0.3), 0 0 40px rgba(6,182,212,0.2);
-      text-decoration: none;
-      color: white;
-      transition: 0.25s ease;
-      letter-spacing: 0.4px;
-      cursor: pointer;
-      text-align: center;
-      border: none;
-      text-shadow: 0 1px 4px rgba(0,0,0,0.15);
-    }
-    .final-download-btn:hover {
-      background: linear-gradient(135deg, #06b6d4, #eab308, #22c55e);
-      transform: scale(0.97);
-      box-shadow: 0 0 30px rgba(6,182,212,0.4), 0 0 60px rgba(34,197,94,0.3);
-    }
-    
+    .final-download-btn { background: #0a0a0a; padding: 12px 16px; font-size: 0.85rem; font-weight: 800; border-radius: 60px; display: block; width: 100%; margin: 14px 0 12px 0; box-shadow: 0 6px 18px rgba(0,0,0,0.25); text-decoration: none; color: white; transition: 0.25s ease; letter-spacing: 0.4px; cursor: pointer; text-align: center; border: none; }
+    .final-download-btn:hover { transform: scale(0.97); background: #1a1a1a; }
     .app-description { background: white; padding: 14px 16px; border-radius: 24px; text-align: left; margin: 14px 0; font-size: 0.8rem; line-height: 1.5; color: #2d3e2b; box-shadow: 0 2px 8px rgba(0,0,0,0.03); }
     
     .tag-section { margin: 14px 0; }
@@ -757,6 +731,236 @@
       box-shadow: 0 0 30px rgba(245, 158, 11, 0.7);
     }
     
+    /* FULL VIEW CARD STYLES */
+    .full-view-card {
+      background: white;
+      border-radius: 28px;
+      padding: 24px 18px 28px;
+      max-width: 400px;
+      margin: 0 auto;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+      border: 1px solid #ffe1b3;
+      text-align: center;
+    }
+    body.dark-theme .full-view-card {
+      background: #1a2632;
+      border-color: #4a5a3a;
+    }
+    .full-view-card .app-icon-large {
+      width: 96px;
+      height: 96px;
+      margin: 0 auto 12px;
+      border-radius: 24px;
+      overflow: hidden;
+      border: 2px solid #ffcf8a;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #fff5e6;
+    }
+    .full-view-card .app-icon-large img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .full-view-card .app-title {
+      font-size: 1.4rem;
+      font-weight: 800;
+      margin-bottom: 4px;
+      background: linear-gradient(125deg, #1e562a, #2c4c3b);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+    .full-view-card .app-sub {
+      font-size: 0.75rem;
+      color: #6c7a5a;
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+    .full-view-card .stats-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px 20px;
+      background: #fef4e6;
+      padding: 10px 14px;
+      border-radius: 40px;
+      margin: 12px auto;
+    }
+    .full-view-card .stats-row .stat-item {
+      text-align: center;
+      min-width: 50px;
+    }
+    .full-view-card .stats-row .stat-value {
+      font-size: 1.05rem;
+      font-weight: 800;
+    }
+    .full-view-card .stats-row .stat-label {
+      font-size: 0.5rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+      color: #6c7a5a;
+    }
+    .full-view-card .info-badges {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px 16px;
+      margin: 12px 0;
+    }
+    .full-view-card .info-badges .badge-item {
+      font-size: 0.7rem;
+      font-weight: 700;
+    }
+    .full-view-card .info-badges .badge-item .badge-label {
+      color: #6c7a5a;
+      font-weight: 600;
+    }
+    .full-view-card .info-badges .badge-item .badge-value {
+      font-weight: 800;
+    }
+    .full-view-card .info-badges .badge-item .badge-value.bonus {
+      color: #dc2626;
+      text-shadow: 0 0 8px #dc2626;
+    }
+    .full-view-card .info-badges .badge-item .badge-value.withdraw {
+      color: #2563eb;
+      text-shadow: 0 0 8px #2563eb;
+    }
+    .full-view-card .download-btn-large {
+      background: #0a0a0a;
+      padding: 14px 20px;
+      font-size: 0.95rem;
+      font-weight: 800;
+      border-radius: 60px;
+      display: block;
+      width: 100%;
+      margin: 16px 0 12px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+      text-decoration: none;
+      color: white;
+      transition: 0.25s ease;
+      letter-spacing: 0.4px;
+      cursor: pointer;
+      text-align: center;
+      border: none;
+    }
+    .full-view-card .download-btn-large:hover {
+      transform: scale(0.97);
+      background: #1a1a1a;
+    }
+    body.dark-theme .full-view-card .download-btn-large {
+      background: linear-gradient(135deg, #22c55e, #06b6d4);
+      box-shadow: 0 0 20px rgba(34,197,94,0.3);
+    }
+    body.dark-theme .full-view-card .download-btn-large:hover {
+      background: linear-gradient(135deg, #06b6d4, #22c55e);
+      box-shadow: 0 0 30px rgba(6,182,212,0.4);
+    }
+    .full-view-card .desc-box {
+      background: #f8fafc;
+      padding: 14px 16px;
+      border-radius: 20px;
+      text-align: left;
+      margin: 14px 0 8px;
+      font-size: 0.8rem;
+      line-height: 1.5;
+      color: #2d3e2b;
+    }
+    body.dark-theme .full-view-card .desc-box {
+      background: #0f1a24;
+      color: #c0d0c0;
+    }
+    .full-view-card .desc-box strong {
+      color: #1e562a;
+    }
+    body.dark-theme .full-view-card .desc-box strong {
+      color: #8bc34a;
+    }
+    .full-view-card .benefits-box {
+      background: #f0f9f0;
+      padding: 10px 14px;
+      border-radius: 16px;
+      border-left: 4px solid #22c55e;
+      text-align: left;
+      font-size: 0.7rem;
+      color: #1e562a;
+      margin: 8px 0 12px;
+    }
+    body.dark-theme .full-view-card .benefits-box {
+      background: #0f1a24;
+      color: #b0d0b0;
+      border-left-color: #4caf50;
+    }
+    .full-view-card .benefits-box strong {
+      color: #0a2e1d;
+    }
+    body.dark-theme .full-view-card .benefits-box strong {
+      color: #8bc34a;
+    }
+    .full-view-card .warning-toggle {
+      margin-top: 12px;
+      padding: 6px 12px;
+      border-radius: 40px;
+      background: linear-gradient(135deg, #0a2e1d, #0d5c2e);
+      border: 2px solid #22c55e;
+      box-shadow: 0 0 15px rgba(34,197,94,0.3);
+      cursor: pointer;
+      transition: 0.3s;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      user-select: none;
+    }
+    .full-view-card .warning-toggle:hover {
+      box-shadow: 0 0 25px rgba(34,197,94,0.5);
+      transform: scale(1.02);
+    }
+    .full-view-card .warning-toggle .led-icon {
+      font-size: 1rem;
+      animation: ledPulse 1.8s ease-in-out infinite;
+    }
+    .full-view-card .warning-toggle .led-text {
+      font-size: 0.65rem;
+      font-weight: 700;
+      color: #e8f5e9;
+      text-shadow: 0 0 8px rgba(34,197,94,0.3);
+    }
+    .full-view-card .warning-toggle .led-arrow {
+      font-size: 0.6rem;
+      color: #86efac;
+      transition: transform 0.3s ease;
+    }
+    .full-view-card .warning-toggle.open .led-arrow {
+      transform: rotate(180deg);
+    }
+    .full-view-card .warning-content {
+      display: none;
+      margin-top: 8px;
+      padding: 8px 12px;
+      border-radius: 12px;
+      background: #fef2f2;
+      border: 2px solid #dc2626;
+      border-left: 6px solid #dc2626;
+      text-align: left;
+      font-size: 0.6rem;
+      color: #333;
+      line-height: 1.4;
+      font-weight: 500;
+    }
+    .full-view-card .warning-content.open {
+      display: block;
+      animation: fadeSlideDown 0.3s ease;
+    }
+    .full-view-card .warning-content strong {
+      color: #dc2626;
+    }
+    
     @media (min-width: 480px) {
       .app-card { max-width: 320px; }
       .nav-logo .site-title { font-size: 0.85rem; }
@@ -767,6 +971,7 @@
     }
     @media (min-width: 768px) {
       .app-card { max-width: 280px; }
+      .full-view-card { max-width: 480px; }
     }
   </style>
 </head>
@@ -1151,93 +1356,104 @@
       const downloadContainer = document.getElementById('downloadPageContainer');
       gridDiv.classList.add('hidden');
       downloadContainer.classList.remove('hidden');
-      const tagsHTML = createTagsHTML(selectedApp.name, bonusNum, selectedIndex);
-      const fiveApps = appsData.filter((_, idx) => idx !== selectedIndex).slice(0, 5);
-      let fiveOptionsHtml = '';
-      fiveApps.forEach((app) => {
-        let h = 0;
-        for (let i = 0; i < app.name.length; i++) { h = ((h << 5) - h) + app.name.charCodeAt(i); h |= 0; }
-        const relBonus = 200 + (Math.abs(h) % 101);
-        const origIdx = appsData.findIndex(a => a.name === app.name);
-        fiveOptionsHtml += `<span class="opt-item" data-opt-index="${origIdx}"><span class="opt-app">${app.name}</span> <span class="opt-bonus">₹${relBonus}</span></span>`;
-      });
-      const otherApps = appsData.filter((_, idx) => idx !== selectedIndex);
-      let otherAppsHtml = '';
-      otherApps.forEach((app) => {
-        const originalIndex = appsData.findIndex(a => a.name === app.name);
-        let h = 0;
-        for (let i = 0; i < app.name.length; i++) { h = ((h << 5) - h) + app.name.charCodeAt(i); h |= 0; }
-        const relBonus = 200 + (Math.abs(h) % 101);
-        otherAppsHtml += `
-          <div class="other-card">
-            <div style="width:48px;height:48px;margin:0 auto 4px;border-radius:14px;overflow:hidden;border:1px solid #e2e8f0;display:flex;align-items:center;justify-content:center;background:#fff5e6;">
-              <img src="${app.img}" alt="${app.name}" loading="lazy" style="width:100%;height:100%;object-fit:cover;" onerror="this.src='https://via.placeholder.com/48?text=App'">
-            </div>
-            <div class="app-name">${app.name}</div>
-            <div class="withdraw-green">Min Withdrawal: ${app.withdrawal}</div>
-            <div class="signup-bonus-small">Sign Up Bonus: ₹${relBonus}</div>
-            <button class="small-download" data-other-index="${originalIndex}">DOWNLOAD</button>
+      
+      // Build FULL VIEW CARD
+      const fullViewHtml = `
+        <div class="full-view-card" id="fullViewCard">
+          <div class="app-icon-large">
+            <img src="${selectedApp.img}" alt="${selectedApp.name}" loading="lazy" onerror="this.src='https://via.placeholder.com/96?text=App'">
           </div>
-        `;
-      });
-      const downloadPageHtml = `
-        <div class="download-page" id="activeDownloadPage">
-          <div class="download-header">
-            <div class="tag-row">
-              <span class="app-name-tag">${selectedApp.name} APK Download</span>
-              <span class="bonus-tag">Signup Bonus: ₹${bonusNum}</span>
-              <span class="withdraw-tag">Min Withdrawal: ${selectedApp.withdrawal}</span>
-            </div>
+          <div class="app-title">${selectedApp.name}</div>
+          <div class="app-sub">YOU ONLY NEED ONE GAMES APP</div>
+          
+          <div class="stats-row">
+            <div class="stat-item"><div class="stat-value" style="color:#22c55e;text-shadow:0 0 12px #22c55e;">${stats.rating}</div><div class="stat-label" style="color:#22c55e;text-shadow:0 0 8px #22c55e;">Rating</div></div>
+            <div class="stat-item"><div class="stat-value" style="color:#eab308;text-shadow:0 0 12px #eab308;">${stats.size}</div><div class="stat-label" style="color:#eab308;text-shadow:0 0 8px #eab308;">Size</div></div>
+            <div class="stat-item"><div class="stat-value" style="color:#06b6d4;text-shadow:0 0 12px #06b6d4;">${stats.votes}</div><div class="stat-label" style="color:#06b6d4;text-shadow:0 0 8px #06b6d4;">Votes</div></div>
+            <div class="stat-item"><div class="stat-value" style="color:#dc2626;text-shadow:0 0 12px #dc2626;">${bonusNum}</div><div class="stat-label" style="color:#dc2626;text-shadow:0 0 8px #dc2626;">Bonus</div></div>
           </div>
-          <div class="app-highlight" id="topDownloadSection">
-            <div style="font-size:1.4rem;font-weight:800;margin-bottom:8px;">${selectedApp.name}</div>
-            <!-- Image moved below the header, removed from top -->
-            
-            <div class="stats-row">
-              <div class="stat-item"><div class="stat-value" style="color:#22c55e;text-shadow:0 0 12px #22c55e;">${stats.rating}</div><div class="stat-label" style="color:#22c55e;text-shadow:0 0 8px #22c55e;">Rating</div></div>
-              <div class="stat-item"><div class="stat-value" style="color:#eab308;text-shadow:0 0 12px #eab308;">${stats.size}</div><div class="stat-label" style="color:#eab308;text-shadow:0 0 8px #eab308;">Size</div></div>
-              <div class="stat-item"><div class="stat-value" style="color:#06b6d4;text-shadow:0 0 12px #06b6d4;">${stats.votes}</div><div class="stat-label" style="color:#06b6d4;text-shadow:0 0 8px #06b6d4;">Votes</div></div>
-              <div class="stat-item"><div class="stat-value" style="color:#dc2626;text-shadow:0 0 12px #dc2626;">${bonusNum}</div><div class="stat-label" style="color:#dc2626;text-shadow:0 0 8px #dc2626;">Bonus</div></div>
-            </div>
-            <!-- App image placed here, below the stats and header tags -->
-            <div style="width:72px;height:72px;margin:10px auto 12px;border-radius:18px;overflow:hidden;border:1px solid #e2e8f0;display:flex;align-items:center;justify-content:center;background:#fff5e6;">
-              <img src="${selectedApp.img}" alt="${selectedApp.name}" loading="lazy" style="width:100%;height:100%;object-fit:cover;" onerror="this.src='https://via.placeholder.com/72?text=App'">
-            </div>
-            <a href="${selectedApp.downloadUrl}" target="_blank" class="final-download-btn">DOWNLOAD ${selectedApp.name}</a>
-            <div class="app-description">${description}<br><br><strong>Extra Benefits:</strong> ${extraBenefits}</div>
-            <div class="tag-section">
-              <div class="tag-title" style="font-weight:700; font-size:0.95rem; margin-bottom:8px; color:#0b1e33;">${selectedApp.name} – Top Offers</div>
-              <div class="five-options" id="fiveOptions">${fiveOptionsHtml}<span class="opt-item" style="background:#22c55e;color:white;border-color:#22c55e;font-weight:700;">+ 5 More</span></div>
-              <div class="tag-grid" id="tagGridContainer">${tagsHTML}</div>
-            </div>
-            <div class="detail-warning-led" id="detailWarningToggle">
-              <span class="led-icon">⚡</span>
-              <span class="led-text">Best APK download super fast Withdrawal</span>
-              <span class="led-arrow">▼</span>
-            </div>
-            <div class="detail-warning-content" id="detailWarningContent">
-              <span class="warning-icon">⚡</span>
-              <strong>Best APK download super fast Withdrawal</strong> – Click the DOWNLOAD button above to get the app.
-            </div>
+
+          <div class="info-badges">
+            <div class="badge-item"><span class="badge-label">Signup Bonus:</span> <span class="badge-value bonus">₹${bonusNum}</span></div>
+            <div class="badge-item"><span class="badge-label">Min Withdrawal:</span> <span class="badge-value withdraw">${selectedApp.withdrawal}</span></div>
           </div>
-          <div class="other-apps-title">Other Yono Apps</div>
-          <div class="other-apps-grid" id="otherAppsGrid">${otherAppsHtml}</div>
+
+          <a href="${selectedApp.downloadUrl}" target="_blank" class="download-btn-large">DOWNLOAD ${selectedApp.name}</a>
+
+          <div class="desc-box">
+            <strong>${description}</strong>
+          </div>
+
+          <div class="benefits-box">
+            <strong>Extra Benefits:</strong> ${extraBenefits}
+          </div>
+
+          <div class="warning-toggle" id="fullViewWarningToggle">
+            <span class="led-icon">⚡</span>
+            <span class="led-text">Best APK download super fast Withdrawal</span>
+            <span class="led-arrow">▼</span>
+          </div>
+          <div class="warning-content" id="fullViewWarningContent">
+            <span class="warning-icon">⚡</span>
+            <strong>Best APK download super fast Withdrawal</strong> – Click the DOWNLOAD button above to get the app.
+          </div>
+
+          <div style="margin-top:16px; border-top: 1px dashed #d0d9e8; padding-top: 14px;">
+            <div style="font-weight:700; font-size:0.8rem; margin-bottom:6px; color:#0b1e33;">${selectedApp.name} – Top Offers</div>
+            <div class="five-options" id="fiveOptionsFull">
+              ${appsData.filter((_, idx) => idx !== selectedIndex).slice(0, 5).map((app) => {
+                let h = 0;
+                for (let i = 0; i < app.name.length; i++) { h = ((h << 5) - h) + app.name.charCodeAt(i); h |= 0; }
+                const relBonus = 200 + (Math.abs(h) % 101);
+                const origIdx = appsData.findIndex(a => a.name === app.name);
+                return `<span class="opt-item" data-opt-index="${origIdx}"><span class="opt-app">${app.name}</span> <span class="opt-bonus">₹${relBonus}</span></span>`;
+              }).join('')}
+              <span class="opt-item" style="background:#22c55e;color:white;border-color:#22c55e;font-weight:700;">+ 5 More</span>
+            </div>
+            <div class="tag-grid" id="tagGridContainerFull">${createTagsHTML(selectedApp.name, bonusNum, selectedIndex)}</div>
+          </div>
+
+          <div class="other-apps-title" style="margin-top:20px;">Other Yono Apps</div>
+          <div class="other-apps-grid" id="otherAppsGridFull">
+            ${appsData.filter((_, idx) => idx !== selectedIndex).map((app) => {
+              const originalIndex = appsData.findIndex(a => a.name === app.name);
+              let h = 0;
+              for (let i = 0; i < app.name.length; i++) { h = ((h << 5) - h) + app.name.charCodeAt(i); h |= 0; }
+              const relBonus = 200 + (Math.abs(h) % 101);
+              return `
+                <div class="other-card">
+                  <div style="width:48px;height:48px;margin:0 auto 4px;border-radius:14px;overflow:hidden;border:1px solid #e2e8f0;display:flex;align-items:center;justify-content:center;background:#fff5e6;">
+                    <img src="${app.img}" alt="${app.name}" loading="lazy" style="width:100%;height:100%;object-fit:cover;" onerror="this.src='https://via.placeholder.com/48?text=App'">
+                  </div>
+                  <div class="app-name">${app.name}</div>
+                  <div class="withdraw-green">Min Withdrawal: ${app.withdrawal}</div>
+                  <div class="signup-bonus-small">Sign Up Bonus: ₹${relBonus}</div>
+                  <button class="small-download" data-other-index="${originalIndex}">DOWNLOAD</button>
+                </div>
+              `;
+            }).join('')}
+          </div>
           <div class="footer-note" style="margin-top:20px;">All apps: ₹100 min withdrawal | Trusted platform | 18+</div>
         </div>
       `;
-      downloadContainer.innerHTML = downloadPageHtml;
-      const detailToggle = document.getElementById('detailWarningToggle');
-      const detailContent = document.getElementById('detailWarningContent');
-      if (detailToggle && detailContent) {
-        detailToggle.addEventListener('click', function() { detailContent.classList.toggle('open'); this.classList.toggle('open'); });
+      downloadContainer.innerHTML = fullViewHtml;
+
+      // Attach events for full view
+      const warnToggle = document.getElementById('fullViewWarningToggle');
+      const warnContent = document.getElementById('fullViewWarningContent');
+      if (warnToggle && warnContent) {
+        warnToggle.addEventListener('click', function() {
+          warnContent.classList.toggle('open');
+          this.classList.toggle('open');
+        });
       }
-      document.querySelectorAll('#fiveOptions .opt-item').forEach(el => {
+      document.querySelectorAll('#fiveOptionsFull .opt-item').forEach(el => {
         el.addEventListener('click', function() {
           const idx = this.getAttribute('data-opt-index');
           if (idx !== null) navigateToDownloadPage(parseInt(idx));
         });
       });
-      document.querySelectorAll('#otherAppsGrid .small-download').forEach(btn => {
+      document.querySelectorAll('#otherAppsGridFull .small-download').forEach(btn => {
         btn.addEventListener('click', (e) => {
           const otherIdx = btn.getAttribute('data-other-index');
           if (otherIdx !== null) navigateToDownloadPage(parseInt(otherIdx));
@@ -1245,8 +1461,8 @@
         });
       });
       setTimeout(() => {
-        const topSection = document.getElementById('topDownloadSection');
-        if (topSection) topSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        const card = document.getElementById('fullViewCard');
+        if (card) card.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }, 100);
     }
 
@@ -1287,11 +1503,11 @@
       navAbout.classList.add('active');
       showInfoModal('About - Yono Games Site', `
         <p><strong>Welcome to Yono Games Site</strong>, a trusted platform created to help users discover <strong>genuine Yono Games apps</strong> safely and confidently. Our website was built with one clear purpose—to eliminate confusion, fake apps, and misleading downloads that users often face while searching for Yono Games online.</p>
-        <p>Over time, we noticed a growing problem. Many users searching for Yono Games were landing on spam websites, unofficial APKs, and misleading links that either didn't work or put their devices and data at risk. Finding authentic Yono Games apps with secure download links was not easy, especially for new users. That's where <strong>we stepped in</strong>.</p>
+        <p>Over time, we noticed a growing problem. Many users searching for Yono Games were landing on spam websites, unofficial APKs, and misleading links that either didn’t work or put their devices and data at risk. Finding authentic Yono Games apps with secure download links was not easy, especially for new users. That’s where <strong>we stepped in</strong>.</p>
         <p><strong>Our Mission</strong><br>Our mission is simple: to provide only verified, genuine, and officially released Yono Games apps in one place.</p>
         <p>We carefully list Yono Games apps that are publicly announced and actively available, ensuring users get access to the right versions without confusion. Every app page is created with clarity, transparency, and user trust in mind.</p>
-        <p><strong>What Makes Us Different</strong><br>✅ <strong>Genuine Yono Games Apps Only</strong> – We focus on authenticity. Our platform highlights real Yono Games releases and avoids misleading or fake listings.<br>✅ <strong>Secure & Safe Download Links</strong> – We ensure users are redirected to safe sources so they can download Yono Games apps with confidence.<br>✅ <strong>Regular Updates</strong> – Yono Games frequently releases new apps and updates. We keep our listings fresh so users don't miss the latest launches.<br>✅ <strong>User-First Approach</strong> – Our content is written in simple language, making it easy for both new and experienced users to understand app details, features, and updates.</p>
-        <p><strong>Built for the Yono Games Community</strong><br>This platform is more than just a listing website. It's a growing resource for users who want reliable information about Yono Games, new app launches, and popular variants—all in one place. We aim to save users time, reduce risk, and improve their overall experience.</p>
+        <p><strong>What Makes Us Different</strong><br>✅ <strong>Genuine Yono Games Apps Only</strong> – We focus on authenticity. Our platform highlights real Yono Games releases and avoids misleading or fake listings.<br>✅ <strong>Secure & Safe Download Links</strong> – We ensure users are redirected to safe sources so they can download Yono Games apps with confidence.<br>✅ <strong>Regular Updates</strong> – Yono Games frequently releases new apps and updates. We keep our listings fresh so users don’t miss the latest launches.<br>✅ <strong>User-First Approach</strong> – Our content is written in simple language, making it easy for both new and experienced users to understand app details, features, and updates.</p>
+        <p><strong>Built for the Yono Games Community</strong><br>This platform is more than just a listing website. It’s a growing resource for users who want reliable information about Yono Games, new app launches, and popular variants—all in one place. We aim to save users time, reduce risk, and improve their overall experience.</p>
         <p><strong>Our Commitment</strong><br>We are committed to transparency, accuracy, and continuous improvement. As Yono Games evolves, so do we. Our goal is to remain a dependable destination for users who want to explore Yono Games without worrying about spam, fake apps, or unreliable sources.</p>
         <p><strong>Explore confidently. Download safely. Stay updated with Yono Games.</strong></p>
         <p style="margin-top:12px;">Welcome to <strong>Yono All Games</strong>, your ultimate one-stop solution for a fun and diverse gaming experience. Whether you are a strategy enthusiast, skill-based card game lover, or a casual gamer, our website has something for everyone. Download Yono All Games APK with a few taps and have access to top-rated gaming apps for unlimited fun. Our app offers a hassle-free and secure experience, with all your favorite online games in one place. Enjoy new releases, special features, and secure downloads at your fingertips. Join <strong>Yono All Games</strong> and explore a gaming universe at your fingertips!</p>
