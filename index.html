@@ -2216,37 +2216,14 @@
       .option-lock { width: 20px; height: 20px; }
     }
 
-    /* NEW STYLE FOR UNIQUE TAG CONTAINER — Text only, clean */
-    .game-about-tags {
-      margin-top: 6px;
-      padding-top: 6px;
-      border-top: 1px dashed #d1d9e6;
+    /* GREEN BORDER CONTAINER FOR ALL TAGS - NEW FIX */
+    .tag-section .tag-grid .tag-box {
+      border: 3px solid #00cc44 !important;
+      border-radius: 12px !important;
+      box-shadow: 0 0 0 1px #00cc44 inset, 0 0 0 1px #00cc44 !important;
     }
-    .game-about-tags .tag-item {
-      font-size: 0.7rem;
-      color: #1e293b;
-      line-height: 1.7;
-      padding: 5px 8px;
-      margin-bottom: 4px;
-      background: #f8fafc;
-      border-radius: 8px;
-      border-left: 3px solid #2563eb;
-      padding-left: 12px;
-    }
-    .game-about-tags .tag-item:last-child {
-      margin-bottom: 0;
-    }
-    .game-about-tags .tag-item strong {
-      color: #0b1e33;
-      font-weight: 700;
-    }
-    .game-about-tags .tag-item .highlight {
-      color: #2563eb;
-      font-weight: 600;
-    }
-    .game-about-tags .tag-item .bonus-highlight {
-      color: #dc2626;
-      font-weight: 700;
+    .tag-section .tag-grid .tag-box .tag-head .svg-icon {
+      display: none !important;
     }
   </style>
 </head>
@@ -3927,25 +3904,33 @@
       // Create a clean tag-box with text-only tags
       const aboutBox = document.createElement('div');
       aboutBox.className = 'tag-box';
-      aboutBox.style.borderColor = '#2563eb';
-      aboutBox.style.borderLeft = '4px solid #2563eb';
+      aboutBox.style.borderColor = '#00cc44';
+      aboutBox.style.borderLeft = '4px solid #00cc44';
 
       const aboutHead = document.createElement('div');
       aboutHead.className = 'tag-head';
       aboutHead.innerHTML = `
-        <span class="svg-icon">
+        <span class="svg-icon" style="display:none !important;">
           <svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px; height:18px;">
             <circle cx="12" cy="12" r="10"/>
             <line x1="12" y1="16" x2="12" y2="12"/>
             <line x1="12" y1="8" x2="12.01" y2="8"/>
           </svg>
         </span>
-        <span style="color:#2563eb;">About ${game.name}</span>
+        <span style="color:#0b1e33;">About ${game.name}</span>
       `;
       aboutBox.appendChild(aboutHead);
 
-      // Add the unique tags as text paragraphs
+      // Add the unique tags as text paragraphs — WITHOUT "For [Name]" prefix
       uniqueTags.forEach((tagText, idx) => {
+        // Remove any "For [Name]" prefix if present
+        let cleanedText = tagText;
+        const forPrefixMatch = tagText.match(/^For\s+[^,]+,?\s*/i);
+        if (forPrefixMatch) {
+          cleanedText = tagText.substring(forPrefixMatch[0].length);
+          // Capitalize first letter
+          cleanedText = cleanedText.charAt(0).toUpperCase() + cleanedText.slice(1);
+        }
         const p = document.createElement('p');
         p.className = 'tag-content';
         p.style.marginBottom = (idx < uniqueTags.length - 1) ? '8px' : '0';
@@ -3953,7 +3938,7 @@
         p.style.fontSize = '0.72rem';
         p.style.color = '#1e293b';
         p.style.lineHeight = '1.65';
-        p.textContent = tagText;
+        p.textContent = cleanedText;
         aboutBox.appendChild(p);
       });
 
